@@ -84,14 +84,16 @@ let miTarea = {
   puesto: Puestos.Segundo,
 };
 
-// Destructuring 
-let { nombre, estado, puesto } = miTarea
+// Destructuring
+let { nombre, estado, puesto } = miTarea;
 
-console.log(`La tarea: ${nombre} está en estado: ${estado} y en el puesto ${puesto}`)
+console.log(
+  `La tarea: ${nombre} está en estado: ${estado} y en el puesto ${puesto}`
+);
 
 // operador ...
 let compraLunes: string[] = ["Huevo", "Leche"];
-let compraMartes: string[] = [ ...compraLunes, "Arroz"];
+let compraMartes: string[] = [...compraLunes, "Arroz"];
 
 console.log(compraLunes);
 console.log(compraMartes);
@@ -99,15 +101,15 @@ console.log(compraMartes);
 let user = {
   usuario: "admin",
   session: 3,
-  jwt: "Bearer123456789"
-}
+  jwt: "Bearer123456789",
+};
 
 let nuevoUser = {
   ...user,
-  session:4
-}
+  session: 4,
+};
 
-console.log(`Session: ${nuevoUser.session}`)
+console.log(`Session: ${nuevoUser.session}`);
 
 // Types de Typescript
 
@@ -198,17 +200,37 @@ listaTareasNueva.map((element: Tarea, index: number) =>
   console.log(`${index} - ${element.nombre}`)
 );
 
-let count: number = 0
+let count: number = 0;
 
 // While
-while(count < 5){
-  console.log(count)
-  count ++
+while (count < 5) {
+  console.log(count);
+  count++;
 }
 
 // Do While
-do{
-  console.log(count)
-  count ++
-}while(count < 10)
+do {
+  console.log(count);
+  count++;
+} while (count < 10);
 
+// - Funciones
+/**
+ * Función que muestra un saludo por consola
+ */
+function saludar(): void {
+  let nombre: string = "Erick";
+  console.log(`Hola mundo, mi nombre es ${nombre}`);
+}
+
+saludar();
+
+/**
+ * Función que muestra un saludo por consola a una persona
+ * @param nombre Nombre de la persona a saludar
+ */
+function saludarPersona(nombre:string){
+  console.log(`Hola, ${nombre}`)
+}
+
+saludarPersona("Elena")
